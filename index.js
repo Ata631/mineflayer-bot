@@ -1,8 +1,8 @@
 const mineflayer = require("mineflayer");
 
 const bot = mineflayer.createBot({
-  host: "dynamic-7.magmanode.com", // Ör: play.example.com
-  port: 25680, // Değiştirme! Sunucun farklıysa değiştir
+  host: "emerald.magmanode.com", // Ör: play.example.com
+  port: 28683, // Değiştirme! Sunucun farklıysa değiştir
   username: "Botmusunolum", // Premium değilse herhangi bir isim
   version: false,
 });
