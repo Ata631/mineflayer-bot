@@ -34,3 +34,5 @@ jobs:
             echo "Bot çöktü! 2 dakika sonra yeniden başlatılacak..."
             sleep 120   # 2 dakika bekle → Senin isteğin
           done
+
+
