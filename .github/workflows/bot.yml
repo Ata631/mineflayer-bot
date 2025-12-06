@@ -1,27 +1,36 @@
-name: Mineflayer Bot
+name: Mineflayer Bot 24/7
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"   # 6 saatte bir otomatik restart
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  run:
+  run-bot:
+    name: Start Bot
     runs-on: ubuntu-latest
+    timeout-minutes: 9999  # Asla zaman aşımına uğramasın
 
     steps:
-      - name: Repo indir
+      - name: Repo'yu indir
         uses: actions/checkout@v3
 
       - name: Node.js kur
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'npm'
 
-      - name: Dependecies yükle
+      - name: Bağımlılıkları yükle
         run: npm install
 
-      - name: Botu çalıştır
-        run: node index.js
+      - name: Botu çalıştır (Sonsuz Döngü + Otomatik Yeniden Başlatma)
+        run: |
+          echo "Bot başlıyor..."
+          while true
+          do
+            node index.js
+            echo "Bot çöktü! 2 dakika sonra yeniden başlatılacak..."
+            sleep 120   # 2 dakika bekle → Senin isteğin
+          done
