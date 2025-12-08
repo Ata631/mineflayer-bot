@@ -8,8 +8,8 @@ app.listen(3000, () => console.log("Ping server aktif (3000)"));
 
 function startBot() {
   const bot = mineflayer.createBot({
-    host: "emerald.magmanode.com",
-    port: 28683,
+    host: "akinci.play.hosting",
+    port: 61647,
     username: "Botmusunolum",
     version: false,
   });
