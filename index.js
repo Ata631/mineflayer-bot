@@ -9,7 +9,7 @@ app.listen(3000, () => console.log("Ping server aktif (3000)"));
 function startBot() {
   const bot = mineflayer.createBot({
     host: "akinci.play.hosting",
-    port: 61647,
+    port: ,
     username: "Botmusunolum",
     version: false,
   });
